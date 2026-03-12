@@ -1,0 +1,64 @@
+1) Using any suitable domain, create prompts for the following prompt types:
+
+a) few-shot
+b) COT
+c) TOT
+d) Self Consistency
+
+Prompt should be clear, concise and address a real business situation.
+
+---------------------------------------------------------------------------------------
+
+2) 
+"
+Brazil reported economic indicators for the year ended 2023.
+GDP was USD 3,177.28 billion compared to USD 1,581.58 billion in 2022.
+Population rose to 144.8 million from 43.8 million a year ago.
+Inflation rate decreased to 5.69% from 14.77% the previous year.
+College graduates totaled 1,309 thousand compared to 2,096 thousand in 2022.
+
+Canada released its annual statistics for 2023.
+GDP was USD 3,299.88 billion, up from USD 1,193.40 billion in 2022.
+Population reached 1,172.1 million, growing from 1,029.8 million.
+Inflation rate fell to 6.40% from 13.21% in the prior year.
+College graduates rose to 4,783 thousand from 3,154 thousand a year earlier.
+
+Germany reported economic results for the year ending 2023.
+GDP was USD 328.90 billion compared to USD 535.54 billion a year ago.
+Population declined to 320.5 million from 1,119.4 million in 2022.
+Inflation rate dropped significantly to 1.07% from 7.98%.
+Number of college graduates was 1,646 thousand compared to 2,995 thousand last year.
+
+India shared its annual economic performance for 2023.
+GDP stood at USD 445.60 billion, down from USD 668.58 billion in 2022.
+Population increased to 1,187.8 million from 1,170.2 million.
+Inflation rate rose to 8.91%, compared to 3.40% the previous year.
+College graduates reached 3,463 thousand, slightly up from 3,311 thousand in 2022.
+
+Japan reported national indicators for 2023.
+GDP was USD 1,369.75 billion, lower than USD 2,223.11 billion in 2022.
+Population rose sharply to 774.0 million from 43.9 million.
+Inflation dropped to 1.44% from 10.31% in 2022.
+College graduate count surged to 4,300 thousand from 1,492 thousand.
+"
+
+Given the following unstructured data, convert it into a structured format and do some basic data analysis (using Prompts)
+eg:
+	i) Yearwise, Which country had the maximum GDP ?
+	
+-------------------------------------------------------------------------------------------------------------------
+
+3)
+	A company produces 500 units of a product each month. The fixed monthly cost is 10000 Rs, and the variable cost per unit is 25 Rs. 
+	The company sells each unit for 50 Rs. After 3 months, they plan to increase production by 20% and reduce the variable cost by 5 Rs per unit.
+	What will be the profit after 6 months?
+
+	Which prompting technique is best suited for the above use case?
+	Share the prompt and the result.
+	
+----------------------------------------------------------------------------------------------------------------------
+
+4)
+	Create a prompt that causes hallucination.
+	Rephrase the prompt such that the hallucination reduces considerably.
+-----------------------------------------------------------------------------------------------------------------------
