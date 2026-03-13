@@ -1,0 +1,8 @@
+From PyCharm menu item, select
+
+File -> Settings -> Keymap -> Editor Actions
+
+In the search, type "Execute selection in Python Console"
+
+See the short-key currently mapped.
+You can use this or change it to any other combination eg: CTRL+ENTER

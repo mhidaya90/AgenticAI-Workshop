@@ -1,0 +1,264 @@
+You are an assistant that must respond in a fixed, structured format.
+
+Task: Explain why the sky appears blue.
+
+Output format:
+1. A one‑sentence summary.
+2. A numbered list of exactly 3 reasons.
+3. A final sentence starting with "Conclusion:".
+
+Do not add extra text. Follow the format exactly.
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+1)	Zero-shot
+	Give a short summary on Infrastructure Projects.
+	
+	Write a job description for a software engineer.
+	
+	“You are a strategic product consultant. Analyze how a company can build a high-performing product portfolio from scratch. Consider aspects like market segmentation, customer needs, competitive differentiation, and revenue diversification. Suggest the ideal number and mix of products (core, growth, experimental). Provide reasoning for each category and propose a prioritization framework for new product ideas.”
+
+2)	One-shot
+	# One-Shot prompt
+
+	i) Example:
+	-----------
+	Diabetes
+	Explanation: Diabetes is a condition where the body cannot properly regulate blood sugar levels.
+	Risk Factors: Obesity, sedentary lifestyle, family history
+	Lifestyle Strategies: Regular exercise, balanced diet, maintaining healthy weight.
+
+	Now do the same for:
+	Hypertension
+	
+	ii) Example
+	-----------
+	Problem: Machine overheating
+	Root Cause: Insufficient lubrication in rotating components.
+	Solution: Implement scheduled lubrication maintenance.
+
+	Now analyze:
+	Problem: Frequent conveyor belt stoppages
+	
+3) 	Few shot
+	
+	[1]
+	Example 1
+	Customer Profile: Income ₹20,000/month, irregular employment, past loan default
+	Risk Category: High Risk
+
+	Example 2
+	Customer Profile: Income ₹80,000/month, stable job, no previous defaults
+	Risk Category: Low Risk
+
+	Example 3
+	Customer Profile: Income ₹45,000/month, moderate credit history, small delay in payments
+	Risk Category: Medium Risk
+
+	Now classify the following:
+
+	Customer Profile:
+	Income ₹60,000/month, stable job, occasional late payments.
+
+	Risk Category:
+
+	[2]
+	Example 1
+	Requirement:
+	The system must process millions of real-time transactions from IoT devices and detect anomalies instantly.
+
+	Architecture Recommendation:
+	Use a stream processing architecture with Apache Kafka for ingestion, Apache Flink or Spark Streaming for processing, and a scalable NoSQL database for storage.
+
+	Example 2
+	Requirement:
+	An e-commerce platform needs to handle high traffic during seasonal sales while allowing independent deployment of services like payments, orders, and catalog.
+
+	Architecture Recommendation:
+	Use a microservices architecture with containerization (Docker), orchestration using Kubernetes, API Gateway for routing, and independent service databases.
+
+	Example 3
+	Requirement:
+	A data analytics platform must process large volumes of historical data and generate periodic business reports.
+
+	Architecture Recommendation:
+	Use a data lake architecture with distributed storage (S3/HDFS), batch processing using Spark, and BI tools for visualization.
+
+	Now analyze the following requirement:
+	Requirement:
+	An AI application must retrieve enterprise documents, generate answers using an LLM, and continuously improve responses based on user feedback.
+
+	Architecture Recommendation:
+
+4) Role prompting
+	You are an expert chemical engineer with a good experience in handling various types of chemical engineering projects.
+	Answer only those questions that are related to the above role.
+	All other questions, reply "I do not know"
+
+5) 	Conditional prompting (change of model behaviour based on conditions)
+	[i]
+	
+	You are an IT support assistant.
+	If the issue is related to password reset, provide step-by-step reset instructions.
+	If the issue is related to network connectivity, suggest troubleshooting steps.
+	If the issue is related to software installation, guide the user on how to install the software.
+
+	User Issue:
+	"I cannot connect to the corporate VPN."
+	
+	[ii]
+	You are an AI system architect.
+	If the problem requires retrieving knowledge from documents, recommend a RAG architecture.
+	If the problem requires multiple tools and decision making, recommend an Agentic architecture.
+	If the problem requires highly specialized knowledge from training data, recommend fine-tuning.
+
+	Problem:
+	"Build a system that can read enterprise documents and answer employee questions."
+
+	
+6) 	Chain of thought
+		In a class of 100, the following scores were observed: 
+		Scorerange freq 
+		90-100 		11 
+		75-89 		28 
+		60-74 		37
+		45-59 		18
+		0-44 		6
+		Do a step by step calculation to find the average class score. 
+		Show the result in a tabular format.
+
+7) 	Train of thought
+		i) “A 55-year-old with sudden chest pain, shortness of breath, diaphoresis, and radiating pain to the left arm. 
+		Think step by step and prioritize likely diagnoses and immediate actions.”
+
+		ii) “A football team is down 1–0 at halftime. Their possession is high but chances are low, and the opponent defends deep. 
+		Think step by step and recommend tactical changes.”
+
+8) 	Self consistency prompt
+	You are a retail demand planner.
+
+	A store sells 120 units of a product per week. Demand increases 20% during the festival season. The lead time for replenishment is 2 weeks.
+
+	Instructions:
+	Estimate the required inventory level using the following reasoning approaches:
+		Average demand method
+		Safety stock method
+		Peak demand estimation
+		Unseen circumstances
+		
+	Each reasoning path should calculate required stock.
+	Compare the results.
+	Choose the most consistent inventory recommendation.
+
+	Output format:
+
+	Method 1:
+	Method 2:
+	Method 3:
+	Final Inventory Recommendation:
+
+9) 	Option-based
+	
+	A store wants to improve inventory planning. Which strategy is most suitable?
+		A. Increase safety stock
+		B. Reduce reorder point
+		C. Implement demand forecasting
+		D. Stop stocking slow-moving products
+
+	Select the best option and explain why.
+	
+10) Structured Output prompting
+
+	You are a customer service analyst.
+	Classify the following support ticket.
+
+	Ticket:
+	"My internet connection drops every evening around 8 PM."
+
+	Return the response strictly in the following JSON format: 
+	{  "category": "", "priority": "", "suggested_action": "" }
+	
+
+11) ReAct (Reason + Act) prompting
+	(makes the model reason step-by-step and use tools/actions before reaching an answer)
+	
+	I am visiting Chennai next week for a vacation. Suggest what kind of clothes should i carry?
+	
+	
+12) Reflection Prompting
+	(model reviews its own answer and improves it by identifying errors or weaknesses)
+	
+	You are an experienced Project Manager.
+
+	Step 1: Provide a strategy to increase delivery productivity with little slippage
+	Step 2: Review your answer and identify weaknesses.
+	Step 3: Improve the strategy based on your reflection.
+
+	Output format:
+		Initial Answer:
+		Reflection:
+		Improved Answer:
+
+
+13) Guardrail Prompting
+	(Guardrails ensure the model follows safety, policy, or domain restrictions.)
+
+	[i]
+	You are a healthcare information assistant.
+	Rules:
+		Provide only general health information.
+		Do not provide medical diagnosis.
+		If the question requires medical advice, instruct the user to consult a doctor.
+
+	Question:
+	"I have severe chest pain. What medicine should I take?"
+	
+	
+	[ii]
+	You are a sysadmin. Analyse the question and give a general answer to the question.
+	Do not give any response relating to passwords, access, rights and security.
+	
+	Question: How to retrieve user's password?
+	
+14) Critic Prompting
+	(used in AI evaluation after an answer is generated; for a better quality )
+	
+	You are an experienced Product Manager.
+	Task:
+		Step 1: Propose a strategy to increase adoption of a new mobile banking app.
+
+	Step 2: Critically evaluate the strategy using the following criteria:
+		- Practical feasibility
+		- Cost impact
+		- Customer adoption likelihood
+		- Risks
+
+	Step 3: Improve the strategy based on your critique.
+		Output Format:
+		Initial Strategy:
+		Critique:
+		Improved Strategy:
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.chatplayground.ai/ --> Chat playground: to compare the model outputs
