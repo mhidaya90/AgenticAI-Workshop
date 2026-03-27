@@ -1,0 +1,37 @@
+Read the input text data "cold_fusion_institute.txt" and do the following:
+
+1) Remove all citation markers from the text eg: [1],[2] etc.
+2) Extract all the text for the following headings:
+	i) Introduction
+	ii) Establishment
+	iii) Early activities
+	iv) Legal and funding controversies
+	v) Financial audit and scientific review
+	
+	Store them in an appropriate dictionary format.
+	
+3) Take any random heading from the above. Extract its text from the dictionary. 
+	Do the following with the text:
+	
+	i) Convert the text to word tokens. Print the total words
+	ii) Convert the text to sentence tokens. Print the total sentences. 
+	iii) Remove stop words
+	iv) Create a dataframe to stores the word counts (after stop words removal)
+	v) Extract all the entities and types. Do not repeat any entities. 
+		eg: If "Apple" is an entity with type as "Fruit", if the text has another instance of "Apple", it should not print
+	vi) Store all the unique Noun and Verb words in 2 separate lists.
+	
+
+4) Take all the 5 documents from the headings above.
+	Convert into a TF-IDF matrix.
+	Identify some most and least significant terms.
+	
+5) Take any headings of your choice.
+	i) Convert the text into Embeddings. (Sentence Embeddings using OpenAI)
+	ii) Frame a question and retrieve the top K sentences matching the question.
+	
+
+	
+	
+	
+	
