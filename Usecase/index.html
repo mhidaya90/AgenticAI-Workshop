@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Execute Prompt</title>
+    <script>
+        async function sendPrompt() {
+            const prompt = document.getElementById("prompt").value;
+            const response = await fetch("/api/execute", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: prompt })
+            });
+            const data = await response.json();
+            let table = "<table border='1'><tr>";
+// Add headers dynamically from the first result
+if (data.results.length > 0) {
+    Object.keys(data.results[0]).forEach(key => {
+        table += `<th>${key}</th>`;
+    });
+    table += "</tr>";
+
+    // Add rows
+    data.results.forEach(r => {
+        table += "<tr>";
+        Object.values(r).forEach(val => {
+            table += `<td>${val}</td>`;
+        });
+        table += "</tr>";
+    });
+    table += "</table>";
+} else {
+    table = "<p>No results found</p>";
+}
+
+document.getElementById("results").innerHTML = table;
+
+<!--            document.getElementById("results").innerHTML = data.results.map(r => `<li>${r}</li>`).join("");-->
+        }
+    </script>
+</head>
+<body>
+    <h1>Execute Prompt</h1>
+    <input type="text" id="prompt" placeholder="Enter your query">
+    <button onclick="sendPrompt()">Submit</button>
+    <ul id="results"></ul>
+</body>
+</html>
