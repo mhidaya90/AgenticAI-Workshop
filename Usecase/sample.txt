@@ -1,1 +1,49 @@
-test
+
+CREATE TABLE bfsicases (
+    case_id VARCHAR PRIMARY KEY,
+    created_date DATE,
+    business_unit VARCHAR,
+    product_type VARCHAR,
+    process_name VARCHAR,
+    workflow_stage VARCHAR,
+    case_status VARCHAR,
+    priority VARCHAR,
+    channel VARCHAR,
+    customer_segment VARCHAR,
+    region VARCHAR,
+    document_type VARCHAR,
+    policy_reference VARCHAR,
+    risk_band VARCHAR,
+    transaction_amount_inr NUMERIC,
+    customer_tenure_months INT,
+    documents_submitted_count INT,
+    fraud_alert_score Numeric,
+    sla_hours INT,
+    actual_tat_hours INT,
+    sla_breach_flag VARCHAR,
+    rework_count INT,
+    exception_flag VARCHAR,
+    csat_score FLOAT,
+    root_cause VARCHAR,
+    resolution_code VARCHAR,
+    knowledge_article_tag VARCHAR,
+    case_summary TEXT,
+    resolution_notes TEXT,
+    closure_date DATE
+);
+
+ALTER TABLE bfsicases ADD COLUMN summary_embedding vector(1536);
+
+select * from bfsicases;
+
+SELECT DISTINCT case_status FROM bfsicases;
+SELECT DISTINCT risk_band FROM bfsicases;
+SELECT COUNT(*) 
+FROM bfsicases
+WHERE LOWER(risk_band)='severe'
+  AND LOWER(process_name)='fraud review'
+  AND LOWER(region)='north';
+
+SELECT MIN(created_date), MAX(created_date)
+FROM bfsicases;
+
